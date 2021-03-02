@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}
+Add Pets
+{% endblock %}
+{% block content %}
+<p>Add Pets page for the Visual Studio Code Flask tutorial.</p>
+<form action="/pets/add" method="POST">
+
+    <label for="petName">Pet name:</label><br>
+    <input type="text" id="petName" name="petName" ><br>
+
+    <label for="petType">Pet type:</label><br>
+    <input type="text" id="petType" name="petType" ><br>
+
+    <label for="familyName">Family type:</label><br>
+    <input type="text" id="familyName" name="familyName" ><br><br>
+
+    <input type="submit" value="Submit">
+  </form> 
+{% endblock %}
+
+
+

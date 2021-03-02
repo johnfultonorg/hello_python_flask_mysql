@@ -1,0 +1,36 @@
+{% extends "layout_data.html" %}
+
+{% block title %}
+Edit Pet
+{% endblock %}
+
+{% block content %}
+<p>Edit Pet page for the Visual Studio Code Flask tutorial.</p>
+{% endblock %}
+
+{% block data %}
+{%if data %}
+
+<form action="/pets/edit" method="POST">
+
+    <label for="petName">Pet name:</label><br>
+    {{data[0]}}
+
+    <input type="hidden" id="id" name="id" value={{data[0]}} ><br>
+
+    <label for="petName">Pet name:</label><br>
+    <input type="text" id="petName" name="petName" value={{data[1]}} ><br>
+
+    <label for="petType">Pet type:</label><br>
+    <input type="text" id="petType" name="petType" value={{data[2]}} ><br>
+
+    <label for="familyName">Family type:</label><br>
+    <input type="text" id="familyName" name="familyName"  value={{data[3]}} ><br><br>
+
+    <input type="submit" value="Update">
+  </form> 
+
+{% endif %}
+{% endblock %}
+
+

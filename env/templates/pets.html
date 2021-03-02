@@ -1,0 +1,34 @@
+{% extends "layout_data.html" %}
+{% block title %}
+Pets
+{% endblock %}
+{% block content %}
+<p>Pets page for the Visual Studio Code Flask tutorial.</p>
+{% endblock %}
+
+{% block data %}
+{%if data %}
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Family</th>
+    </tr>
+
+    {% for item in data %}
+    <tr>
+        <td>{{item[0]}}</td>
+        <td>{{item[1]}}</td>
+        <td>{{item[2]}}</td>
+        <td>{{item[3]}}</td>
+        <td><a href="/pets/edit?id={{item[0]}}">Edit</a></td>
+        <td><a href="/pets/delete?id={{item[0]}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+
+</table> 
+{% endif %}
+{% endblock %}
+
+
